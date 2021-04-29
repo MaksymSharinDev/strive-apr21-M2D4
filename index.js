@@ -39,5 +39,23 @@ window.onload = function(){
             }
         )
     })
+/*
+    document.getElementById('assignMemBtn').addEventListener('click', ()=>{
+        let teamLists =[...document.querySelectorAll('#team-list ul li')]
+        let membersArray = [...document.querySelectorAll('#member-list ul li') ]
+        let ulQty =  Math.floor( teamLists.length / membersArray.length )
 
+        teamLists.forEach( (team, i ) => {
+            for ( let i = 0; i < ulQty ; i++){
+
+            }
+            let li = document.createElement('li')
+            li.classList.add('list-group-item')
+            li.innerText = membersArray[i].innerText;
+            team.append( li )
+                membersArray[i].remove()
+            }
+        )
+    })
+*/
 }
