@@ -76,7 +76,8 @@ window.onload = function(){
         while( targetTeam.querySelector('ul').childElementCount >= ulQty ){
             shuffle( teamLists )
             targetTeam = teamLists[0]
-             if ( i<5 ) i++ else break;
+             if ( i<5 ) i++
+             else { break }
         }
         let ul = targetTeam.querySelector('ul')
         let li = targetMember.cloneNode()

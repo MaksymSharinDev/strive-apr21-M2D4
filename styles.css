@@ -1,5 +1,7 @@
 
-
+[teamName] {
+ min-width:20%
+}
 
 .btn {
     min-width: clamp(100px,95%,300px);
