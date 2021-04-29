@@ -21,7 +21,7 @@ body {
 }
 
 .tag-field {
-    /*display: flex;*/
+    display: flex;
     flex-wrap: wrap;
     height: auto;
     padding: 5px;

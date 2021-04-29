@@ -70,22 +70,22 @@
                 <div class="card">
                     <ul class="list-group text-center">
                         <li class="list-group-item ">
-                            <button type="button" class="btn btn-dark"> Load Members</button>
+                            <button id="lMemBtn" type="button" class="btn btn-dark"> Load Members</button>
                         </li>
                         <li class="list-group-item ">
-                            <button type="button" class="btn btn-dark"> Load Teams   </button>
+                            <button id="lTeamBtn" type="button" class="btn btn-dark"> Load Teams   </button>
                         </li>
                         <li class="list-group-item ">
-                            <button type="button" class="btn btn-dark"> Assign Member   </button>
+                            <button id="assignMemBtn" type="button" class="btn btn-dark"> Assign Member   </button>
                         </li>
                     </ul>
                 </div>
             </section>
         </div>
         <div class="col-6 col-sm-6 col-xl-4 ">
-            <section class="mb-3" id="team-list">
+            <section class="mb-3" id="member-list">
                 <div class="card">
-                    <div class="card-header text-center">
+                    <div class="card-header text-center" hidden >
                         <button id="showMemberListBtn" type="button" class="btn btn-dark"> Show Members list</button>
                     </div>
 
@@ -96,9 +96,9 @@
                     </ul>
                 </div>
             </section>
-            <section class="mb-3" id="member-list">
+            <section class="mb-3" id="team-list">
                 <div class="card">
-                    <div class="card-header text-center">
+                    <div class="card-header text-center" hidden >
                         <button id="showTeamsListBtn" type="button" class="btn btn-dark"> Show Teams List</button>
                     </div>
 
