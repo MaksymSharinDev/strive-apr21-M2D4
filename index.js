@@ -1,3 +1,19 @@
+const shuffle = function (array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+}
 window.onload = function(){
     loadTagInput();
     let getTags = () =>{
@@ -34,11 +50,31 @@ window.onload = function(){
                 h6.innerText = el;
                 let li = document.createElement('li')
                 li.classList.add('list-group-item')
+                li.setAttribute('TeamName', el )
                 li.append(h6)
                 teamList.append(li)
             }
         )
     })
+    document.getElementById('assignMemBtn').addEventListener('click', ()=>{
+        let teamLists =[...document.querySelectorAll('#team-list li[teamName]')]
+        let membersArray = [...document.querySelectorAll('#member-list ul li') ]
+        let ulQty =  Math.floor( teamLists.length / membersArray.length )
+        shuffle( membersArray )
+        shuffle( teamLists )
+        let targetTeam = teamLists[0]
+        let targetMember = membersArray[0]
+        if (targetTeam.querySelector('ul') === null ){
+            let ul = document.createElement('ul')
+            ul.classList.add('list-group')
+            targetTeam.append(ul)
+        }
+        let li = targetMember
+        let ul = targetTeam.querySelector('ul')
+        ul.innerHTML = ul.innerHTML + '\n' + li.outerHTML
+        targetMember.remove()
+    } )
+}
 /*
     document.getElementById('assignMemBtn').addEventListener('click', ()=>{
         let teamLists =[...document.querySelectorAll('#team-list ul li')]
@@ -58,4 +94,5 @@ window.onload = function(){
         )
     })
 */
-}
+
+
