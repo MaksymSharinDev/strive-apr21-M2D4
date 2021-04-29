@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+
+    In this app you will generate teams and assign the participants to them.
+    You will use the Bootstrap components for the elements of your app.
+
+    The features are the following:
+    - The user should be able to add a list of names, find a way to get the user input and fill a list with the new name.
+    - The user should be able to set the number of teams he wants, so that they will be generated. A team is just another list to be displayed.
+    - An "Assign" button will be required in order to launch the team generation functionality.
+    - Every time the user clicks on the "Assign" button, a random name is placed in a team and removed from the initial list.
+    - Each team should be inside a "column" to be responsive.
+    - [EXTRA] Create a button to remove a user from a team, and putting him back in the main list, waiting to be reassigned.
+    - [EXTRA] Create a button to reset the state of the app.
+-->
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+    />
+    <!-- Jquery & Bootstrap scripts -->
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"
+    ></script>
+
+    <!-- custom tag input style -->
+    <link rel="stylesheet" href="tagInput.css">
+    <!-- custom tag input script -->
+    <script src="tagInput.js"></script>
+    <!-- Project Style -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Project Script -->
+    <script src="index.js"></script>
+
+</head>
+<body>
+<main class="container mt-5">
+
+    <div class="row">
+        <div class="col-6 col-sm-6 col-xl-4 ">
+            <section class="mb-3" id="tagListInput">
+                <div class="tagInputContainer mb-3 ml-3 mr-3">
+                    <div class="tagInputInner">
+                        <div class="tag-field js-tags">
+                            <input class="js-tag-input" placeholder="Enter new tag..." id="textInput"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-3" id="btnInputs">
+                <div class="card">
+                    <ul class="list-group text-center">
+                        <li class="list-group-item ">
+                            <button type="button" class="btn btn-dark"> Load Members</button>
+                        </li>
+                        <li class="list-group-item ">
+                            <button type="button" class="btn btn-dark"> Load Teams   </button>
+                        </li>
+                        <li class="list-group-item ">
+                            <button type="button" class="btn btn-dark"> Assign Member   </button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="col-6 col-sm-6 col-xl-4 ">
+            <section class="mb-3" id="team-list">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <button id="showMemberListBtn" type="button" class="btn btn-dark"> Show Members list</button>
+                    </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">A</li>
+                        <li class="list-group-item">B</li>
+                        <li class="list-group-item">C</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="mb-3" id="member-list">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <button id="showTeamsListBtn" type="button" class="btn btn-dark"> Show Teams List</button>
+                    </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <h6> Team A </h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">A</li>
+                                <li class="list-group-item">B</li>
+                                <li class="list-group-item">C</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <h6> Team B </h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">A</li>
+                                <li class="list-group-item">B</li>
+                                <li class="list-group-item">C</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>
