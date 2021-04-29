@@ -59,7 +59,7 @@ window.onload = function(){
     document.getElementById('assignMemBtn').addEventListener('click', ()=>{
         let teamLists =[...document.querySelectorAll('#team-list li[teamName]')]
         let membersArray = [...document.querySelectorAll('#member-list ul li') ]
-        let ulQty =  Math.floor( teamLists.length / membersArray.length )
+        let ulQty =  Math.floor( teamLists.length / membersArray.length + 1 )
         shuffle( membersArray )
         shuffle( teamLists )
         let targetTeam = teamLists[0]
@@ -67,11 +67,22 @@ window.onload = function(){
         if (targetTeam.querySelector('ul') === null ){
             let ul = document.createElement('ul')
             ul.classList.add('list-group')
+            ul.classList.add('m-3')
             targetTeam.append(ul)
         }
-        let li = targetMember
+
+        //that make more probable to balance squads but isn't the most efficient algorithm,
+        let i=0;
+        while( targetTeam.querySelector('ul').childElementCount >= ulQty ){
+            shuffle( teamLists )
+            targetTeam = teamLists[0]
+             if ( i<5 ) i++ else break;
+        }
         let ul = targetTeam.querySelector('ul')
-        ul.innerHTML = ul.innerHTML + '\n' + li.outerHTML
+        let li = targetMember.cloneNode()
+        li.innerText = targetMember.innerText
+
+        ul.append(li)
         targetMember.remove()
     } )
 }
